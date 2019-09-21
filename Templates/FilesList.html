@@ -1,0 +1,19 @@
+<h2>GIT Repository Details</h2>
+<p>USER NAME : <em> {{ username }} </em></p>
+<p>There are a total of  {{ Context.repo_count }} repositories created by <em>{{ username }}</em></p>
+{% for key, value in Context.list_repos.items %}
+<p> REPOSITORY URL : </p><em>{{ key }}</em></p>
+<table border="1">
+    <tr>
+        <th> File Name</th>
+        <th> File Type </th>
+    </tr>
+    {% for key, value in value.items %}
+    <tr>
+        <td> {{ value }}</td>
+        <td> {{  key }} </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endfor %}
+
